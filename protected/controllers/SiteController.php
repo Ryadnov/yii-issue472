@@ -106,4 +106,12 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	public function actionWidget($theme = null)
+	{
+		if ($theme) {
+			Yii::app()->theme = $theme;
+		}
+		$this->render('widget');
+	}
 }
